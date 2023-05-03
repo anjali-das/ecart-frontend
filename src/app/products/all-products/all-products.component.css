@@ -1,0 +1,16 @@
+.banner{
+    background-image: url('https://img.freepik.com/free-photo/laptop-shopping-bags-online-shopping-concept_1423-189.jpg?w=1060&t=st=1681891650~exp=1681892250~hmac=4fbc043260b80ba68a902d71a22cb3c576e65d9ed2e0c77da1b9c9033451057b');
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+    height: 400px;
+
+}
+.card img{
+    transition: 3s;
+}
+
+.card:hover img{
+transform: scale(1.1);
+transition: 2s;
+}

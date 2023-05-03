@@ -1,0 +1,56 @@
+<!-- empty wishlist -->
+<div *ngIf="allProducts.length==0" class=".container">
+    <div class="row mt-5">
+        <div class="col mt-5 text-center">
+            <img src="https://thumbs.gfycat.com/CompleteShallowFlyingsquirrel-size_restricted.gif" alt="cart_gif">
+            <h3 class="text-danger">Your Wishlist is Empty!!!!!</h3>
+            <a class="btn btn-success" routerLink="">Add More</a>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- wishlist design with items -->
+<section class="py-5">
+    <div *ngIf="allProducts.length!=0" class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let product of allProducts" class="col mb-5">
+                <div class="card h-100 p-3">
+                    <!-- Product image-->
+                    <img style="height: 200px;" class="card-img-top" [src]="product.image" [alt]="product.title" />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{product.title.slice(0,17)}}..</h5>
+                            <!-- Product price-->
+                            ${{product.price}}
+                        </div>
+                    </div>
+
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center d-flex justify-content-evenly">
+
+                            <!-- item delete btn -->
+                            <button (click)="removeItem(product.id)" class="btn btn-danger mt-auto">
+                                <i class="fa-solid fa-heart-circle-xmark text-light"></i>
+                            </button>
+
+                            <!-- add to cart btn -->
+                            <button (click)="addtoCart(product)" class="btn btn-success">
+                                <i class="fa-solid fa-cart-plus text-light"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
